@@ -7,12 +7,12 @@ namespace nucleus {
 namespace {
 
 TEST(Task, BlockOn) {
-  const auto hello = [&]() -> Task {
+  const auto hello = []() -> Task {
     LOG(INFO) << "hello";
     co_return;
   };
 
-  const auto world = [&]() -> Task {
+  const auto world = []() -> Task {
     LOG(INFO) << "world";
     co_return;
   };

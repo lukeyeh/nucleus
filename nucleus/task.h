@@ -68,11 +68,11 @@ class Task {
       };
     }
 
-    // Always suspending before we entire the actual coroutine body is
-    // important. This is because it gives us the oppurtunity to synchronize the
-    // caller and the callee (oursevless). This is convinient as, we can stash
-    // the caller's handle before we do any real work, giving ourselves the
-    // ability to resume the caller whenever we're done, without any races.
+    // Always suspending before the actual coroutine body is important. This is
+    // because it gives us the oppurtunity to synchronize the caller and the
+    // callee (oursevless). This is convinient as, we can stash the caller's
+    // handle before we do any real work, giving ourselves the ability to resume
+    // the caller whenever we're done, without any races.
     //
     // Without this initial suspend always suspending, there's the chance that
     // the asynchronous work completes very quickly or even synchronously, and
